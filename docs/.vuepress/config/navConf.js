@@ -1,16 +1,15 @@
 module.exports = [
-  { text: '主页', link: '/' },
+  { text: '主页', link: '/'},
   { text: 'about', link: '/about/' },
   {
-    text: 'css', link: '/veiws/css',
+    text: '后端',
     items: [
-      { text: 'a', link: '/veiws/css/css-a/' },
-      { text: 'b', link: '/veiws/css/css-b/' },
-      { text: 'c', link: '/veiws/css/css-c/' }
+      { text: 'java', link: '/veiws/java/' },
+      { text: 'C语言', link: '/veiws/c/' }
     ]
   },
   {
-    text: 'foo', link: '/veiws/foo',
+    text: '前端', link: '/veiws/foo',
     items: [
       { text: 'a', link: '/veiws/foo/one' }
     ]
@@ -24,4 +23,4 @@ module.exports = [
       { text: 'Japanese', link: '/language/japanese/' }
     ]
   }
-];
+]

@@ -6,6 +6,7 @@ module.exports = {
 
   '@vuepress/last-updated': {
     transformer: (timestamp) => moment(timestamp).format('LLLL')
-  }
+  },
+  '@vuepress/back-to-top': true,
   
 }
