@@ -4,14 +4,14 @@ module.exports = [
   {
     text: '后端',
     items: [
-      { text: 'java', link: '/veiws/java/' },
-      { text: 'C语言', link: '/veiws/c/' }
+      { text: 'java', link: '/views/java/object-oriented-and-process-oriented' },
+      { text: 'C语言', link: '/views/c/' }
     ]
   },
   {
-    text: '前端', link: '/veiws/foo',
+    text: '前端', link: '/views/foo',
     items: [
-      { text: 'a', link: '/veiws/foo/one' }
+      { text: 'a', link: '/views/foo/one' }
     ]
   },
   { text: 'google', link: 'https://google.com', target: '_blank', rel: 'noopener noreferrer' },

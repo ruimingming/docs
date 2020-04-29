@@ -3,14 +3,17 @@ const headConf = require('./config/headConf.js')
 const pluginConf = require('./config/pluginConf.js')
 const sidebar = require('./config/sidebar/')
 module.exports = {
-  title: 'Hello VuePress',
+  title: '我的精神病好多了',
   base: '/docs/',
-  description: 'Hello, my friend!',
+  // description: 'Hello, my friend!',
   head: headConf,
   plugins: pluginConf,
   themeConfig: {
-    logo: '/logo.ico',
+    // logo: '/logo.ico',
     // sidebar: 'auto',
+    editLinks: true,
+    sidebarDepth: 2,
+    searchMaxSuggestions: 10,
     displayAllHeaders: true,
     sidebar: sidebar,
     nav: navConf,

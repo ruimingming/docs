@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /favicon.gif
+heroImage: /favicon.png
 heroText: 我的精神病好多了
 tagline: 时光如白驹过隙,世事如白云苍狗
 actionText: 梦想开始的地方 →

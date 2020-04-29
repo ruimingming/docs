@@ -3,10 +3,25 @@ const moment = require('moment')
 moment.locale("zh-cn")
 
 module.exports = {
-
+  '@vuepress/back-to-top': true,
   '@vuepress/last-updated': {
     transformer: (timestamp) => moment(timestamp).format('LLLL')
   },
-  '@vuepress/back-to-top': true,
-  
+  '@vssue/vuepress-plugin-vssue': {
+    // 设置 `platform` 而不是 `api`
+    platform: 'github-v4',
+
+    // 其他的 Vssue 配置
+    owner: 'ruimingming',
+    repo: 'docs',
+    clientId: '975c34f55f7ab442cf95',
+    clientSecret: 'ac98aa996ccf97136d48f1323bdd6a2805ffe5dd',
+    locale: 'zh'
+  },
+  '@vuepress/active-header-links': {
+    sidebarLinkSelector: '.sidebar-link',
+    headerAnchorSelector: '.header-anchor'
+  }
+
+
 }

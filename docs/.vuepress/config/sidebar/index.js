@@ -1,12 +1,15 @@
 //侧边栏
 module.exports = {
-    '/veiws/': [
+    '/views/': [
         '',
         {
             title: 'Java基础',   // 必要的
             collapsable: true, // 可选的, 默认值是 true,
             children: [
-                'java/'
+                'java/object-oriented-and-process-oriented',
+                'java/only-call-value-in-java',
+                'java/enum',
+                'java/auto-boxing',
             ]
         },
         {
@@ -18,4 +21,4 @@ module.exports = {
         }
 
     ]
-}	
+}
