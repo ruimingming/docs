@@ -45,7 +45,7 @@ module.exports = [
 
       {
         text: 'VuePress',
-        link: ' https://www.vuepress.cn/',
+        link: 'https://www.vuepress.cn/',
       },
       {
         text: 'Vue.js',
