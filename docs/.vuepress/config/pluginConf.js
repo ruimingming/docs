@@ -21,6 +21,28 @@ module.exports = {
   '@vuepress/active-header-links': {
     sidebarLinkSelector: '.sidebar-link',
     headerAnchorSelector: '.header-anchor'
+  },
+  'vuepress-plugin-zooming':
+  {
+
+    delay: 1000,
+    options: {
+      bgColor: 'black',
+      zIndex: 10000,
+    },
+  },
+  "vuepress-plugin-nuggets-style-copy": {
+    copyText: "复制代码",
+    tip: {
+      content: "复制成功!"
+    }
+  }, '@vuepress/nprogress': {}, 'reading-progress': {},
+  'vuepress-plugin-copyright':
+  {
+    noCopy: true, // 选中的文字将无法被复制
+    minLength: 100, // 如果长度超过 100 个字符
+    // clipboardComponent: 'ClipboardComponent',
+    authorName: '著作权归 我的精神病好多了 所有。',
   }
 
 

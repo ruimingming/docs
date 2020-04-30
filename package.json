@@ -18,11 +18,15 @@
   "dependencies": {
     "@vssue/api-github-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
-    "moment": "^2.24.0"
+    "@vuepress-reco/vuepress-plugin-screenfull": "^1.0.1",
+    "moment": "^2.24.0",
+    "vuepress-plugin-reading-progress": "^1.0.9"
   },
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^1.4.1",
     "@vuepress/plugin-back-to-top": "^1.4.1",
-    "vuepress": "^1.4.1"
+    "vuepress": "^1.4.1",
+    "vuepress-plugin-copyright": "^1.0.2",
+    "vuepress-plugin-nuggets-style-copy": "^1.0.3",
+    "vuepress-plugin-zooming": "^1.1.7"
   }
 }

@@ -13,10 +13,13 @@ module.exports = {
             ]
         },
         {
-            title: 'C语言基础',   // 必要的
+            title: 'NodeJS',   // 必要的
             collapsable: true, // 可选的, 默认值是 true,
             children: [
-                'c/'
+                'nodejs/introduction',
+                'nodejs/why-node',
+                'nodejs/global',
+                'nodejs/common-js'
             ]
         }
 
