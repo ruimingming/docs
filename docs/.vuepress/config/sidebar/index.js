@@ -19,7 +19,16 @@ module.exports = {
                 'nodejs/introduction',
                 'nodejs/why-node',
                 'nodejs/global',
-                'nodejs/common-js'
+                'nodejs/common-js',
+                'nodejs/npm'
+            ]
+        },{
+            title: 'JavaScript',   // 必要的
+            collapsable: true, // 可选的, 默认值是 true,
+            children: [
+                'javascript/why-single-thread',
+                'javascript/execution-context', 
+                'javascript/execution-stack-and-event-queue', 
             ]
         }
 

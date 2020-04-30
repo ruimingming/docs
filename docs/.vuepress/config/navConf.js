@@ -11,7 +11,8 @@ module.exports = [
   {
     text: '前端', link: '/views/foo',
     items: [
-      { text: 'NodeJS', link: '/views/nodejs/introduction' }
+      { text: 'NodeJS', link: '/views/nodejs/introduction' },
+      { text: 'JavaScript', link: '/views/javascript/why-single-thread' }
     ]
   },
   // {
