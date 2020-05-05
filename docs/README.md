@@ -2,7 +2,7 @@
 home: true
 heroImage: /favicon.gif
 heroText: 我的精神病好多了
-tagline: 时光如白驹过隙,世事如白云苍狗
+tagline: 人生天地之间,若白驹之过隙,忽然而已
 actionText: 梦想开始的地方 →
 actionLink: /about/
 features:

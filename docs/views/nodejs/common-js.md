@@ -565,7 +565,7 @@ Module.prototype._compile = function(content, filename) {
 
 >前提 : 在一个node引擎在执行(调用)一个js文件时，会创建一个方法函数包裹我们的js代码中的内容,也就是在运行期间,我们的代码作用域默认是在函数
 
-![image-20200321173402975](assets/image-20200321173402975.png)
+![image-20200321173402975](/assets/image-20200321173402975.png)
 
 ### exports
 
