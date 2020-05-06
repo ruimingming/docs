@@ -1,3 +1,6 @@
+---
+title: 3.14 DISCONNECT –断开连接
+---
 ## 3.14 DISCONNECT –断开连接
 
 DISCONNECT报文是客户端发给服务端的最后一个控制报文。表示客户端正常断开连接。

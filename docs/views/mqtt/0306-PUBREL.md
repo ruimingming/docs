@@ -1,3 +1,6 @@
+---
+title: 3.6 PUBREL – 发布释放（QoS 2，第二步）
+---
 ## 3.6 PUBREL – 发布释放（QoS 2，第二步）
 
 PUBREL报文是对PUBREC报文的响应。它是QoS 2等级协议交换的第三个报文。

@@ -1,10 +1,10 @@
 ---
-title: 规范
+title: CommonJS
 ---
 
-## CommonJS
+# CommonJS
 
-### 背景
+## 背景
 
 ECMScript标准的缺陷
 
@@ -15,13 +15,13 @@ ECMScript标准的缺陷
 
 CommonJS的提出,主要是为了弥补当前JavaScript没有标准的缺陷
 
-### 简介
+## 简介
 
 CommonJS是Node.js使用的模块化标准,主要是在服务器端模块化的规范，在CommonJS规范中，一个文件就是一个模块，模块具有单独的作用域，在模块内定义的变量、函数、类等都是私有的，对其他文件不可见。
 
 `CommonJS`定义的模块分为: 模块标识(`module`)、模块定义(`exports`) 、模块引用(`require`)
 
-### 特点
+## 特点
 
 Node 应用由模块组成，采用 CommonJS 模块规范。
 
@@ -75,7 +75,7 @@ CommonJS模块的特点如下。
 - 模块可以多次加载，但是只会在第一次加载时运行一次，然后运行结果就被缓存了，以后再加载，就直接读取缓存结果。要想让模块再次运行，必须清除缓存。
 - 模块加载的顺序，按照其在代码中出现的顺序。
 
-### module对象
+## module对象
 
 Node内部提供一个`Module`构建函数。所有模块都是`Module`的实例。
 
@@ -143,7 +143,7 @@ if (!module.parent) {
 }
 ```
 
-#### module.exports属性
+### module.exports属性
 
 `module.exports`属性表示当前模块对外输出的接口，其他文件加载该模块，实际上就是读取`module.exports`变量。
 
@@ -165,7 +165,7 @@ a.on('ready', function() {
 });
 ```
 
-#### exports变量
+### exports变量
 
 为了方便，Node为每个模块提供一个exports变量，指向module.exports。这等同在每个模块头部，有一行这样的命令。
 
@@ -213,7 +213,7 @@ module.exports = function (x){ console.log(x);};
 
 如果你觉得，`exports`与`module.exports`之间的区别很难分清，一个简单的处理方法，就是放弃使用`exports`，只使用`module.exports`。
 
-### AMD规范与CommonJS规范的兼容性
+## AMD规范与CommonJS规范的兼容性
 
 CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。AMD规范则是非同步加载模块，允许指定回调函数。由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用AMD规范。
 
@@ -248,9 +248,9 @@ define(function (require, exports, module){
 });
 ```
 
-### require命令
+## require命令
 
-#### 基本用法
+### 基本用法
 
 Node使用CommonJS模块规范，内置的`require`命令用于加载模块文件。
 
@@ -292,7 +292,7 @@ require('./example2.js')()
 
 上面代码中，require命令调用自身，等于是执行`module.exports`，因此会输出 hello world。
 
-#### 加载规则
+### 加载规则
 
 `require`命令用于加载文件，后缀名默认为`.js`。
 
@@ -326,7 +326,7 @@ var foo = require('foo.js');
 
 （6）如果想得到`require`命令加载的确切文件名，使用`require.resolve()`方法。
 
-#### 目录的加载规则
+### 目录的加载规则
 
 通常，我们会把相关的文件会放在一个目录里面，便于组织。这时，最好为该目录设置一个入口文件，让`require`方法可以通过这个入口文件，加载整个目录。
 
@@ -340,7 +340,7 @@ var foo = require('foo.js');
 
 `require`发现参数字符串指向一个目录以后，会自动查看该目录的`package.json`文件，然后加载`main`字段指定的入口文件。如果`package.json`文件没有`main`字段，或者根本就没有`package.json`文件，则会加载该目录下的`index.js`文件或`index.node`文件。
 
-#### 模块的缓存
+### 模块的缓存
 
 第一次加载某个模块时，Node会缓存该模块。以后再加载该模块，就直接从缓存取出该模块的`module.exports`属性。
 
@@ -369,7 +369,7 @@ Object.keys(require.cache).forEach(function(key) {
 
 注意，缓存是根据绝对路径识别模块的，如果同样的模块名，但是保存在不同的路径，`require`命令还是会重新加载该模块。
 
-#### 环境变量NODE_PATH
+### 环境变量NODE_PATH
 
 Node执行一个脚本时，会先查看环境变量`NODE_PATH`。它是一组以冒号分隔的绝对路径。在其他位置找不到指定模块时，Node会去这些路径查找。
 
@@ -403,7 +403,7 @@ var myModule = require('../../../../lib/myModule');
 
 `NODE_PATH`是历史遗留下来的一个路径解决方案，通常不应该使用，而应该使用`node_modules`目录机制。
 
-#### 模块的循环加载
+### 模块的循环加载
 
 如果发生模块的循环加载，即A加载B，B又加载A，则B将加载A的不完整版本。
 
@@ -457,7 +457,7 @@ main.js  b2
 
 上面代码中，第二次加载a.js和b.js时，会直接从缓存读取exports属性，所以a.js和b.js内部的console.log语句都不会执行了。
 
-#### require.main
+### require.main
 
 `require`方法有一个`main`属性，可以用来判断模块是直接执行，还是被调用执行。
 
@@ -470,7 +470,7 @@ require.main === module
 
 调用执行的时候（通过`require`加载该脚本执行），上面的表达式返回false。
 
-### 模块的加载机制
+## 模块的加载机制
 
 CommonJS模块的加载机制是，输入的是被输出的值的拷贝。也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。请看下面这个例子。
 
@@ -504,7 +504,7 @@ console.log(counter); // 3
 
 上面代码说明，`counter`输出以后，`lib.js`模块内部的变化就影响不到`counter`了。
 
-#### require的内部处理流程
+### require的内部处理流程
 
 `require`命令是CommonJS规范之中，用来加载其他模块的命令。它其实不是一个全局命令，而是指向当前模块的`module.require`命令，而后者又调用Node的内部命令`Module._load`。
 
@@ -549,13 +549,13 @@ Module.prototype._compile = function(content, filename) {
 
 `Module._compile`方法是同步执行的，所以`Module._load`要等它执行完成，才会向用户返回`module.exports`的值。
 
-#### 模块化
+### 模块化
 
 在nodejs中,一个js文件就是一个模块
 
 在nodejs中,每一个js文件中的js代码都是独立运行在一个函数中(nodejs封装的)
 
-### global
+## global
 
 在node环境中有一个全局对象,global,它的作用和网页中的window对象类似
 
@@ -567,11 +567,11 @@ Module.prototype._compile = function(content, filename) {
 
 ![image-20200321173402975](/assets/image-20200321173402975.png)
 
-### exports
+## exports
 
 该对象用来将变量或函数暴露给外部
 
-### require
+## require
 
 该对象用来引入外部模块
 
@@ -580,21 +580,21 @@ Module.prototype._compile = function(content, filename) {
 - 核心模块,由node引擎提供的模块.浅红色文字：<font color="red">直接通过模块名称导入</font>
 - 文件模块,由用户创建的模块.<font color="red">可通过相对路径或者绝对路径导入</font>
 
-### module
+## module
 
 该对象代表当前模块本身
 
 exports是module的属性,exports指向module.exports(exports保留了module.exports的指针)
 
-### __filename
+## __filename
 
 该对象代表当前模块完整路径
 
-### __dirname
+## __dirname
 
 该对象代表当前模块所在文件夹的路径
 
-### exports和module.exports
+## exports和module.exports
 
 exports指向module.exports的内存地址，涉及到引用变量和基本变量
 
@@ -602,7 +602,7 @@ exports指向module.exports的内存地址，涉及到引用变量和基本变�
 
 一般尽量都用 `module.exports` 导出，然后用`require`导入。
 
-### package
+## package
 
 CommonJS的规范允许我们将一组相关的模块组合在一起，形成一个完整的工具
 
@@ -616,7 +616,7 @@ CommonJS的包规范由包结构和包描述文件构成
   - doc 文档
   - test 单元测试 
 
-#### package.json
+### package.json
 
 每个项目的根目录下面，一般都有一个`package.json`文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。`npm install`命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。
 
@@ -671,7 +671,7 @@ CommonJS的包规范由包结构和包描述文件构成
 }
 ```
 
-##### scripts
+#### scripts
 
 `scripts`指定了运行脚本命令的npm命令行缩写，比如start指定了运行`npm run start`时，所要执行的命令。
 
@@ -686,7 +686,7 @@ CommonJS的包规范由包结构和包描述文件构成
 }
 ```
 
-##### dependencies and devDependencies
+#### dependencies and devDependencies
 
 `dependencies`字段指定了项目运行所依赖的模块，`devDependencies`指定项目开发所需要的模块。
 
@@ -731,7 +731,7 @@ $ npm install express --save-dev
 
 上面代码表示单独安装express模块，`--save`参数表示将该模块写入`dependencies`属性，`--save-dev`表示将该模块写入`devDependencies`属性。
 
-##### peerDependencies
+#### peerDependencies
 
 有时，你的项目和所依赖的模块，都会同时依赖另一个模块，但是所依赖的版本不一样。比如，你的项目依赖A模块和B模块的1.0版，而A模块本身又依赖B模块的2.0版。
 
@@ -754,7 +754,7 @@ $ npm install express --save-dev
 
 注意，从npm 3.0版开始，`peerDependencies`不再会默认安装了。
 
-##### bin
+#### bin
 
 bin项用来指定各个内部命令对应的可执行文件的位置。
 
@@ -782,11 +782,11 @@ scripts: {
 
 所有`node_modules/.bin/`目录下的命令，都可以用`npm run [命令]`的格式运行。在命令行下，键入`npm run`，然后按tab键，就会显示所有可以使用的命令。
 
-##### main
+#### main
 
 `main`字段指定了加载的入口文件，`require('moduleName')`就会加载这个文件。这个字段的默认值是模块根目录下面的`index.js`。
 
-##### config
+#### config
 
 `config`字段用于添加命令行的环境变量。
 
@@ -820,7 +820,7 @@ $ npm run start
 $ npm config set foo:port 80
 ```
 
-##### browser
+#### browser
 
 browser指定该模板供浏览器使用的版本。Browserify这样的浏览器打包工具，通过它就知道该打包那个文件。
 
@@ -830,7 +830,7 @@ browser指定该模板供浏览器使用的版本。Browserify这样的浏览器
 },
 ```
 
-##### engines
+#### engines
 
 `engines`字段指明了该模块运行的平台，比如 Node 的某个版本或者浏览器。
 
@@ -844,7 +844,7 @@ browser指定该模板供浏览器使用的版本。Browserify这样的浏览器
 { "engines" : { "npm" : "~1.0.20" } }
 ```
 
-##### man
+#### man
 
 man用来指定当前模块的man文档的位置。
 
@@ -852,11 +852,11 @@ man用来指定当前模块的man文档的位置。
 "man" :[ "./doc/calc.1" ]
 ```
 
-##### preferGlobal
+#### preferGlobal
 
 preferGlobal的值是布尔值，表示当用户不将该模块安装为全局模块时（即不用–global参数），要不要显示警告，表示该模块的本意就是安装为全局模块。
 
-##### style
+#### style
 
 style指定供浏览器使用时，样式文件所在的位置。样式文件打包工具parcelify，通过它知道样式文件的打包位置。
 

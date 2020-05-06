@@ -1,3 +1,6 @@
+---
+title: 3.13 PINGRESP – 心跳响应
+---
 ## 3.13 PINGRESP – 心跳响应
 
 服务端发送PINGRESP报文响应客户端的PINGREQ报文。表示服务端还活着。

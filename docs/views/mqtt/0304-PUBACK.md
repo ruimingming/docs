@@ -1,3 +1,6 @@
+---
+title: 3.4 PUBACK –发布确认
+---
 ## 3.4 PUBACK –发布确认
 
 PUBACK报文是对QoS 1等级的PUBLISH报文的响应。

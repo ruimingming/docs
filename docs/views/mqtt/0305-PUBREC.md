@@ -1,3 +1,6 @@
+---
+title: PUBREC – 发布收到（QoS 2，第一步）
+---
 ## 3.5 PUBREC – 发布收到（QoS 2，第一步）
 
 PUBREC报文是对QoS等级2的PUBLISH报文的响应。它是QoS 2等级协议交换的第二个报文。

@@ -1,3 +1,6 @@
+---
+title: 3.12 PINGREQ – 心跳请求
+---
 ## 3.12 PINGREQ – 心跳请求
 
 客户端发送PINGREQ报文给服务端的。用于：

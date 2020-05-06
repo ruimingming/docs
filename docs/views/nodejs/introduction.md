@@ -1,12 +1,7 @@
 ---
-title: 简介
+title: 什么是NodeJS
 ---
-
-
-
-[[toc]]
-
-## 什么是NodeJS
+# 什么是NodeJS
 
 1. node.js是一个构建在Chrome JavaScript运行环境的平台，这是很重要的一点，**node.js并不是一门语言，而是一个平台**
 2. node.js致力于使构建速度快、稳定的网络程序更简单

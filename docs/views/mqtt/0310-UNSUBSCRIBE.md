@@ -1,3 +1,6 @@
+---
+title: 3.10 UNSUBSCRIBE –取消订阅
+---
 ## 3.10 UNSUBSCRIBE –取消订阅
 
 客户端发送UNSUBSCRIBE报文给服务端，用于取消订阅主题。

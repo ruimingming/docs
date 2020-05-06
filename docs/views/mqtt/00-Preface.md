@@ -1,3 +1,6 @@
+---
+title: MQTT协议3.1.1中文版
+---
 # MQTT协议3.1.1中文版
 
 * [OASIS标准](https://www.oasis-open.org/committees/mqtt/) 2014年10月29日

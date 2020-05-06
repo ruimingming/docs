@@ -1,3 +1,6 @@
+---
+title: 第二章 MQTT控制报文格式 MQTT Control Packet format
+---
 # 第二章 MQTT控制报文格式 MQTT Control Packet format
 
 ## 目录

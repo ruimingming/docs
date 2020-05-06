@@ -1,3 +1,6 @@
+---
+title: 3.9 SUBACK – 订阅确认
+---
 ## 3.9 SUBACK – 订阅确认
 
 服务端发送SUBACK报文给客户端，用于确认它已收到并且正在处理SUBSCRIBE报文。

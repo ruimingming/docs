@@ -1,3 +1,6 @@
+---
+title: 3.7 PUBCOMP – 发布完成（QoS 2，第三步）
+---
 ## 3.7 PUBCOMP – 发布完成（QoS 2，第三步）
 
 PUBCOMP报文是对PUBREL报文的响应。它是QoS 2等级协议交换的第四个也是最后一个报文。
