@@ -94,7 +94,7 @@ CONNECT报文的可变报头按下列次序包含四个字段：协议名（Prot
 
 ##### 图例 3.4 -连接标志位
 
-[![figure-3.4](images/figure0304.png)](0301-CONNECT.md)
+![figure-3.4](/assets/mqtt/0301-CONNECT/figure0304.png)
 
 服务端**必须**验证CONNECT控制报文的保留标志位（第0位）是否为0，如果不为0必须断开客户端连接 \[MQTT-3.1.2-3\]。
 
@@ -211,10 +211,27 @@ CONNECT报文的可变报头按下列次序包含四个字段：协议名（Prot
 
 ##### 图例 3.5保持连接字节
 
-| **Bit** | **7**                   | **6** | **5** | **4** | **3** | **2** | **1** | **0** |
-|---------|-------------------------|-------|-------|-------|-------|-------|-------|-------|
-| byte 9  | 保持连接 Keep Alive MSB |
-| byte 10 | 保持连接 Keep Alive LSB |
+<table style="text-align:center">
+   <tr>
+     <td align="center"><strong>Bit</strong></td>
+     <td align="center"><strong>7</strong></td>
+     <td align="center"><strong>6</strong></td>
+     <td align="center"><strong>5</strong></td>
+     <td align="center"><strong>4</strong></td>
+     <td align="center"><strong>3</strong></td>
+     <td align="center"><strong>2</strong></td>
+     <td align="center"><strong>1</strong></td>
+     <td align="center"><strong>0</strong></td>
+   </tr>
+   <tr>
+     <td>byte 9</td>
+     <td colspan="8" align="center">保持连接 Keep Alive MSB</td>
+   </tr>
+   <tr>
+     <td>byte 10</td>
+     <td colspan="8" align="center">保持连接 Keep Alive LSB</td>
+   </tr>
+ </table>
 
 保持连接（Keep Alive）是一个以秒为单位的时间间隔，表示为一个16位的字，它是指在客户端传输完成一个控制报文的时刻到发送下一个报文的时刻，两者之间允许空闲的最大时间间隔。客户端负责保证控制报文发送的时间间隔不超过保持连接的值。如果没有任何其它的控制报文可以发送，客户端**必须**发送一个PINGREQ报文 \[MQTT-3.1.2-23\]。
 
@@ -234,7 +251,7 @@ CONNECT报文的可变报头按下列次序包含四个字段：协议名（Prot
 
 ##### 图例 3.6 -可变报头非规范示例
 
-[![figure-3.6](images/figure0306.png)](0301-CONNECT.md)
+![figure-3.6](/assets/mqtt/0301-CONNECT/figure0306.png)
 
 ### 3.1.3 有效载荷 Payload
 
@@ -285,7 +302,7 @@ CONNECT报文的有效载荷（payload）包含一个或多个以长度为前缀
 ##### 图例 3.7 - 密码字节
 
 | **Bit**   | **7**  - **0** |
-|-----------|---------------------|-
+|-----------|---------------------|-|
 | byte 1    | 数据长度 MSB                    |
 | byte 2    | 数据长度 LSB                    |
 | byte 3 …. | 如果长度大于0，这里就是数据部分 |
