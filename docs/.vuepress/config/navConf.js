@@ -5,6 +5,7 @@ module.exports = [
     text: '后端',
     items: [
       { text: 'Java', link: '/views/java/object-oriented-and-process-oriented' },
+      { text: 'MQTT', link: '/views/mqtt/00-Preface' },
 
     ]
   },
